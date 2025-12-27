@@ -1,0 +1,61 @@
+1. connect database and create database
+
+  > create database jwt_db;
+  
+  > CREATE TABLE `api_keys` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `client_name` varchar(255) NOT NULL,
+  `api_key` varchar(255) NOT NULL,
+  `active` tinyint(1) DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `api_key` (`api_key`)
+);
+
+> CREATE TABLE `users` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+
+> INSERT INTO api_keys (client_name, api_key, active) VALUES ('Client A', '123e4567-e89b-12d3-a456-426614174000', 1);
+
+
+2. Go to dao and UserDao.java and ApiKeyDao.java change mysql user and password sane and exits
+
+
+3. go to > jwt-api-key-mvc
+
+4. run below command (in not found mvn then install )
+
+mvn clean compile
+
+then
+
+mvn exec:java -Dexec.mainClass="com.example.api.App"
+
+
+
+
+
+E.g
+
+ADD
+===
+POST http://localhost:8080/api/users/add
+Content-Type: application/json
+
+{
+  "name": "John",
+  "email": "john@test.com"
+}
+
+List
+===
+GET http://localhost:8080/api/users
+Content-Type: application/json
+
+
+
