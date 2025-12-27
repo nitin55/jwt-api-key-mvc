@@ -12,7 +12,7 @@ No connection pool is used; all DB operations are handled with plain JDBC.
 
 ## Table of Contents
 
-- [Prerequisites](#prerequisites)  
+- [Prerequisites](##prerequisites)  
 - [Database Setup](#database-setup)  
 - [Project Setup](#project-setup)  
 - [Running the Application](#running-the-application)  
